@@ -1,3 +1,3 @@
 # music-player
 
-hosted link - https://freemusic1.freewebhostmost.com/
+hosted link - http://freemusic.ix.tc/
