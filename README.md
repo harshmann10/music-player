@@ -1,3 +1,3 @@
 # music-player
 
-hosted link - http://freemusic.ix.tc/
+hosted link - http://freemusic1.duckdns.org/
