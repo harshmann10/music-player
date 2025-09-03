@@ -65,36 +65,18 @@ export async function fetchAlbumDetails(folderName) {
  * @returns {Promise<string[]>} - A promise that resolves to an array of album folder names.
  */
 export async function fetchAlbumFolders() {
-    let responseText = "";
     try {
-        let response = await fetch(`${BASE_API_URL}/${SONGS_ROOT_FOLDER}/`);
+        let response = await fetch(`${BASE_API_URL}/${SONGS_ROOT_FOLDER}/info.json`);
         if (!response.ok) {
-            console.error(`HTTP error! Status: ${response.status} for albums root folder.`);
+            console.error(`HTTP error! Status: ${response.status} for global info.json.`);
             return [];
         }
-        responseText = await response.text();
+        const globalInfo = await response.json();
+        return globalInfo.albums || [];
     } catch (error) {
-        console.error("Error fetching albums directory:", error);
+        console.error("Error fetching global info.json:", error);
         return [];
     }
-
-    const div = document.createElement("div");
-    div.innerHTML = responseText;
-    const anchorTags = div.getElementsByTagName("a");
-    const albumFolders = [];
-
-    for (let i = 0; i < anchorTags.length; i++) {
-        const e = anchorTags[i];
-        const url = new URL(e.href);
-        const pathSegments = url.pathname.split('/').filter(segment => segment !== '');
-        const songsRootIndex = pathSegments.indexOf(SONGS_ROOT_FOLDER);
-
-        if (songsRootIndex !== -1 && pathSegments.length > songsRootIndex + 1 && url.pathname.endsWith('/')) {
-            const folderName = pathSegments[songsRootIndex + 1];
-            albumFolders.push(folderName);
-        }
-    }
-    return albumFolders;
 }
 
 export { BASE_API_URL, SONGS_ROOT_FOLDER };

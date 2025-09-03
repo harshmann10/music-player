@@ -26,6 +26,7 @@ When shuffle is active, the button will change its appearance to indicate the ac
 ### What Happens When Shuffle is Active
 
 When shuffle is activated:
+
 - Songs will play in a random order rather than sequentially
 - This applies to both automatic song transitions (when a song finishes) and manual navigation (when you click the next button)
 - The previous button will still take you to the previously played song, regardless of shuffle state
@@ -50,6 +51,7 @@ When repeat is active, the button will change its appearance to indicate the act
 ### What Happens When Repeat is Active
 
 When repeat is activated:
+
 - The current song will automatically replay from the beginning once it finishes
 - This overrides the default behavior of advancing to the next song
 - The next button will still advance to the next song in the playlist when clicked manually
@@ -62,6 +64,7 @@ When repeat is activated:
 ## How the Features Work Together
 
 When both shuffle and repeat are active:
+
 - The repeat feature takes precedence for the current song (it will replay the same song)
 - After the repeated song finishes, shuffle will determine the next song if you manually click next or if the song ends naturally
 - The combination allows you to repeat a song as many times as you want while still having the option to move to a random song from the playlist
@@ -73,6 +76,7 @@ This project uses HTML, CSS, and JavaScript to create a responsive music player 
 ## Setup
 
 To run this project locally:
+
 1. Clone or download the repository
 2. Open `index.html` in your web browser
 3. No additional setup or dependencies are required
@@ -83,6 +87,7 @@ To run this project locally:
 - `css/` - Contains all CSS stylesheets
 - `js/` - Contains all JavaScript files for player functionality
 - `img/` - Contains all image assets including icons and album art
+- `songs/info.json` - Global configuration file listing all available album folders
 
 ## Contributing
 

@@ -692,12 +692,12 @@ body {
 }
 
 .seekbar {
-    height: 4px;
+    height: 4.5px;
     width: calc(100% - 24px);
     background: var(--color-white);
     border-radius: 2px;
     position: absolute;
-    bottom: 6px;
+    bottom: 10px;
     left: 12px;
     cursor: pointer;
     transition: all var(--transition-normal);
@@ -718,7 +718,7 @@ body {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: var(--color-white);
+    background: var(--color-spotify-green);
     position: absolute;
     top: 50%;
     left: var(--progress, 0%);
