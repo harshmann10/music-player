@@ -4,6 +4,7 @@ A fully functional **music player web application** with a modern UI inspired by
 Built with **HTML, CSS, and JavaScript**, this project demonstrates responsive design, dynamic playlists, and interactive player controls.
 
 ---
+<img width="1853" height="940" alt="image" src="https://github.com/user-attachments/assets/73cf99c3-f720-49b5-b9cc-2a25db787f4e" />
 
 ## ✨ Features
 
