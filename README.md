@@ -95,7 +95,3 @@ Built with **HTML, CSS, and JavaScript**, this project demonstrates responsive d
 ## Contributing
 
 This project is part of a tutorial series and is intended for educational purposes. Feel free to fork and modify it for your own learning.
-
-## License
-
-This project is created for educational purposes as part of Code with Harry's tutorial series.
