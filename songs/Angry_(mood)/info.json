@@ -1,4 +1,11 @@
 {
-    "title": "Angry Mood",
-    "description": "Calm your Anger"
+  "title": "Angry Mood songs",
+  "description": "Songs with angry mood",
+  "songs": [
+    {
+      "id": 1,
+      "name": "Bulleya",
+      "artist": "Pritam"
+    }
+  ]
 }

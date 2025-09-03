@@ -8,91 +8,120 @@
     <link rel="shortcut icon" href="./new favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/utility.css">
+    <link rel="stylesheet" href="./css/animations.css">
 </head>
 
 <body>
     <div class="container flex bg-black">
-        <div class="left bg-black roboto">
+        <!-- Left Sidebar: Contains navigation and library sections -->
+        <aside class="left bg-black roboto" aria-label="Sidebar Navigation">
             <div class="close">
-                <img class="invert" src="./img/close.svg" alt="">
+                <img class="invert" src="./img/close.svg" alt="Close sidebar menu">
             </div>
-            <div class="home rounded bg-grey m-1 p-1">
+            <nav class="home rounded bg-grey m-1 p-1" aria-label="Main Navigation">
                 <div class="logo">
-                    <img src="img/spotube.png" alt="logo">
-                    <img width="100px" src="img/music.png" alt="logo" class="invert">
+                    <img src="img/spotube.png" alt="Spotube logo">
+                    <img width="100px" src="img/music.png" alt="Music icon" class="invert">
                 </div>
                 <ul>
-                    <li><img class="invert" src="img\home.svg" alt="home">Home</li>
-                    <li><img class="invert" src="img\search.svg" alt="search">Search</li>
+                    <li><img class="invert" src="img/home.svg" alt="Home icon">Home</li>
                 </ul>
-            </div>
-            <div class="library bg-grey rounded m-1 p-1">
+            </nav>
+            <section class="library bg-grey rounded m-1 p-1" aria-labelledby="library-heading">
                 <div class="heading">
-                    <img src="img/playlist.svg" class="invert" alt="playlist">
-                    <h2>Your Library</h2>
+                    <img src="img/playlist.svg" class="invert" alt="Playlist icon">
+                    <h2 id="library-heading">Your Library</h2>
+                </div>
+                <div class="search-bar">
+                    <input type="search" id="search-songs" placeholder="Filter songs in this playlist..."
+                        aria-label="Filter songs in this playlist">
                 </div>
                 <div class="songlist">
                     <ul>
+                        <!-- Songs will be dynamically inserted here by JavaScript -->
                     </ul>
                 </div>
-            </div>
-            <div class="footer">
+            </section>
+            <footer class="footer">
                 <div><a href="https://www.spotify.com/in-en/legal/"><span>Legal</span></a></div>
                 <div><a href="https://www.spotify.com/in-en/privacy/"><span>Privacy Center</span></a></div>
                 <div><a href="https://www.spotify.com/in-en/legal/privacy-policy/"><span>Privacy Policy</span></a></div>
                 <div><a href="https://www.spotify.com/in-en/legal/cookies-policy/"><span>Cookies</span></a></div>
                 <div><a href="https://www.spotify.com/in-en/legal/privacy-policy/#s3"><span>About Ads</span></a></div>
-                <div><a href="https://www.spotify.com/in-en/accessibility/"><span>Accessibility</span></a></div>
-            </div>
-        </div>
-        <div class="right rounded bg-grey roboto">
-            <div class="header">
-                <div class="nav flex">
-                    <img class="invert hamburger" src="./img/hamburger.svg" alt="">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M15 6L9.70711 11.2929C9.37377 11.6262 9.20711 11.7929 9.20711 12C9.20711 12.2071 9.37377 12.3738 9.70711 12.7071L15 18"
-                            stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M9 18L14.2929 12.7071C14.6262 12.3738 14.7929 12.2071 14.7929 12C14.7929 11.7929 14.6262 11.6262 14.2929 11.2929L9 6"
-                            stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </div>
+                <!-- <div><a href="https://www.spotify.com/in-en/accessibility/"><span>Accessibility</span></a></div> -->
+            </footer>
+        </aside>
+
+        <!-- Right Main Content Area -->
+        <main class="right rounded bg-grey roboto">
+            <header class="header">
+                <nav class="nav flex" aria-label="Page Navigation">
+                    <img class="invert hamburger" src="./img/hamburger.svg" alt="Open sidebar menu">
+                    <button aria-label="Previous page">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M15 6L9.70711 11.2929C9.37377 11.6262 9.20711 11.7929 9.20711 12C9.20711 12.2071 9.37377 12.3738 9.70711 12.7071L15 18"
+                                stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <button aria-label="Next page">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9 18L14.2929 12.7071C14.6262 12.3738 14.7929 12.2071 14.7929 12C14.7929 11.7929 14.6262 11.6262 14.2929 11.2929L9 6"
+                                stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </nav>
                 <div class="button">
                     <button class="sign">Sign up</button>
                     <button class="login">Log in</button>
                 </div>
-            </div>
-            <div class="playlist">
-                <h1>Music Playlists</h1>
+            </header>
+            <section class="playlist" aria-labelledby="playlist-heading">
+                <h1 id="playlist-heading">Music Playlists</h1>
                 <div class="cardContainer">
+                    <!-- Album cards will be dynamically inserted here by JavaScript -->
                 </div>
-                <div class="playbar">
+                <!-- Music Player Controls -->
+                <div class="playbar" role="region" aria-label="Music Player Controls">
                     <div class="seekbar">
                         <div class="circle"></div>
                     </div>
                     <div class="abovebar">
-                        <div class="songinfo"></div>
+                        <div class="songinfo" aria-live="polite" aria-atomic="true"></div>
                         <div class="songbutton">
-                            <img width="30" id="previous" src="./img/prevsong.svg" alt="previous">
-                            <img width="30" id="play" src="./img/play.svg" alt="play">
-                            <img width="30" id="next" src="./img/nextsong.svg" alt="next">
+                            <button id="shuffle" aria-label="Shuffle playlist">
+                                <img width="20" src="./img/shuffle.svg" alt="Shuffle icon">
+                            </button>
+                            <button id="previous" aria-label="Previous song">
+                                <img width="30" src="./img/prevsong.svg" alt="Previous song icon">
+                            </button>
+                            <button id="play" aria-label="Play/Pause song">
+                                <img width="30" src="./img/play.svg" alt="Play song icon">
+                            </button>
+                            <button id="next" aria-label="Next song">
+                                <img width="30" src="./img/nextsong.svg" alt="Next song icon">
+                            </button>
+                            <button id="repeat" aria-label="Repeat song">
+                                <img width="20" src="./img/repeat.svg" alt="Repeat icon">
+                            </button>
                         </div>
                         <div class="timevolume">
-                            <div class="songtime"></div>
+                            <div class="songtime" aria-live="polite" aria-atomic="true"></div>
                             <div class="volume">
-                                <img id="volumeButton" src="./img/volume.svg" alt="">
-                                <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1">
+                                <button id="volumeButton" aria-label="Mute/Unmute volume">
+                                    <img src="./img/volume.svg" alt="Volume icon">
+                                </button>
+                                <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1"
+                                    aria-label="Volume slider">
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
+        </main>
     </div>
-    <script src="./js/script.js"></script>
+    <script type="module" src="./js/script.js"></script>
 </body>
 
 </html>
